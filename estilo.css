@@ -4,79 +4,57 @@
 }
 
 body {
-    background: #000;
+    background: radial-gradient(circle, #fff, #bbb);
+    padding: 15px;
 }
 
-.flex-container {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
+.grid-container {
+    display: grid;
     background: #333;
-    margin: 50px 50px;
-    padding: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    border: 3px solid #000;
+    justify-items: center;
+    align-items: center;
+    height: 600px;
 }
 
-.form {
-    min-width: 400px;
-    flex: 1;
-    text-align: center;
-    padding: 30px;
-    order: 5;
+.grid-item {
+    border: 1px solid #000;
+    background: #999;
+    font-size: 30px;
+    padding: 50px;
 }
 
-.form__input {
-    width: 100%;
-    padding: 7px;
-    margin: 6px 0;
-    border: none;
-    border-bottom: 3px solid #1c7;
-    background: transparent;
-    color: #fff;
+.grid-item:first-child {
+    place-self: start;
+    background: red;
 }
 
-.form__input:focus {
-    outline: none;
-    background: linear-gradient(to bottom, transparent, #222);
-    border-bottom: 3px solid #5f9;
+
+.grid-item:nth-child(6) {
+    justify-self: start;
 }
 
-.form textarea {
-    min-height: 140px;
-    resize: none;
+.grid-item:nth-child(4) {
+    justify-self: end;
 }
 
-.form-img {
-    flex: 1;
-    padding: 10px;
-    display: flex;
-    min-width: 300px;
-    max-width: 400px;
-    order: 2;
+.grid-item:nth-child(5) {
+    background: lightgreen;
 }
 
-.form-img img {
-    width: 100%;
-    margin: auto;
-
+.grid-item:nth-child(7) {
+    place-self: end start;
+    background: red;
 }
 
-.form input[type="submit"] {
-    background: #094;
-    border-bottom: none;
-    padding: 12px;
+.grid-item:nth-child(3) {
+   place-self: start end;
+    background: red;
 }
 
-.form input[type="submit"]:hover {
-    background: #072;
-    border-bottom: none;
-    padding: 12px;
-}
-
-.form input[type="submit"]:focus {
-    background: #094;
-}
-
-.form input[type="submit"]:active {
-    background: linear-gradient(to bottom, #072, #050);
+.grid-item:last-child {
+    place-self: end;
+    background: red;
 }
